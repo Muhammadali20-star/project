@@ -11,12 +11,12 @@ const Layout = () => {
   return (
     <>
       <Header/>
-      <Hero />
-      <Range />
+      {pathname === '/' && <Hero />}
+      {pathname === '/' && <Range />}
       <main className='min-h-[80vh]'>
         <Outlet/>
       </main>
-     <Support/>
+      {pathname === '/shop' && <Support/>}
       <Footer/>
     </>
   )
