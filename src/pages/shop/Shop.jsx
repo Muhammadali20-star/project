@@ -1,4 +1,5 @@
 import { useProduct } from "@/api/hooks/useProduct";
+import Support from "@/components/support/Support";
 import { HeartOutlined, ShoppingCartOutlined } from "@ant-design/icons";
 import { Pagination } from "antd";
 import React from "react";
@@ -55,6 +56,7 @@ const Shop = () => {
           pageSize={pageSize}
         />
       </div>
+      <Support/>
     </div>
   );
 };
