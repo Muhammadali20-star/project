@@ -2,7 +2,7 @@ import React from 'react'
 
 const ProductDetail = () => {
   return (
-    <div>ProductDetail</div>
+    <div className='container mx-auto mt-4'>ProductDetail</div>
   )
 }
 
