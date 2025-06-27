@@ -51,7 +51,7 @@ const Checkout = () => {
             <Form.Item
             label="First Name"
             name="FirstName"
-            rules={[{ required: true, message: 'Please input your firstName!' }]}
+            rules={[{ required: true, message: 'Please input your firstName!'}]}
             >
             <Input />
             </Form.Item>
@@ -59,7 +59,7 @@ const Checkout = () => {
             <Form.Item
             label="Last Name"
             name="LastName"
-            rules={[{ required: true, message: 'Please input your lastName!' }]}
+            rules={[{ required: true, message: 'Please input your lastName!'}]}
             >
             <Input />
             </Form.Item>
@@ -68,7 +68,7 @@ const Checkout = () => {
             <Form.Item
             label="Street address"
             name="StreetAddress"
-            rules={[{ required: true, message: 'Please input your Street address!' }]}
+            rules={[{ required: true, message: 'Please input your Street address!'}]}
             >
             <Input />
             </Form.Item>
@@ -76,7 +76,7 @@ const Checkout = () => {
             <Form.Item
             label="Town / City"
             name="TownCity"
-            rules={[{ required: true, message: 'Please input your Town / City!' }]}
+            rules={[{ required: true, message: 'Please input your Town / City!'}]}
             >
             <Input />
             </Form.Item>
@@ -84,7 +84,7 @@ const Checkout = () => {
             <Form.Item
             label="Phone Number"
             name="Phone"
-            rules={[{ required: true, message: 'Please input your Phone!' }]}
+            rules={[{ required: true, message: 'Please input your Phone!'}]}
             >
             <Input />
             </Form.Item>
@@ -92,7 +92,7 @@ const Checkout = () => {
             <Form.Item
             label="Email address"
             name="EmailAddress"
-            rules={[{ required: true, message: 'Please input your Email address!' }]}
+            rules={[{ required: true, message: 'Please input your Email address!'}]}
             >
             <Input />
             </Form.Item>
