@@ -23,10 +23,10 @@ const { data: allProducts } = getProduct({ limit: 4, skip: 0 });
         <div className="rounded-lg p-4 flex flex-col md:flex-row gap-6 items-center justify-center w-full">
           <div className="flex md:flex-col gap-4  max-w-full md:max-h-[400px]">
             {data?.images?.map((item, inx) => (
-              <img onClick={() => setIndex(inx)} src={item} className="w-20 h-20 md:w-24 md:h-24 px-2 bg-gray-300 rounded-[10px] object-cover" key={inx} alt="" />
+              <img onClick={() => setIndex(inx)} loading='lazy' src={item} className="w-20 h-20 md:w-24 md:h-24 px-2 bg-gray-300 rounded-[10px] object-cover" key={inx} alt="" />
             ))}
           </div>
-          <img className="w-full max-w-xs md:w-96 h-auto md:h-[360px] px-2 bg-gray-300 rounded-[10px] object-contain" src={data?.images?.[index]} alt=""/>
+          <img className="w-full max-w-xs md:w-96 h-auto md:h-[360px] px-2 bg-gray-300 rounded-[10px] object-contain" src={data?.images?.[index]} loading='lazy' alt=""/>
         </div>
         <div className="flex flex-col gap-4">
           <h1 className="text-2xl md:text-3xl font-bold text-[#333]">{data?.title}</h1>

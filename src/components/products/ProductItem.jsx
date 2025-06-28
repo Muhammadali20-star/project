@@ -39,7 +39,7 @@ const ProductItem = (product) => {
   return (
     <div className="rounded-2xl overflow-hidden bg-white">
       <div className="relative group">
-        <img src={thumbnail} alt={title} onClick={() => navigate(`/products/${id}`)} className="w-full h-64 object-contain bg-gray-100 p-4"/>
+        <img src={thumbnail} loading="lazy" alt={title} onClick={() => navigate(`/products/${id}`)} className="w-full h-64 object-contain bg-gray-100 p-4"/>
         <button
           onClick={() => dispatch(toggleWishlist(product))}
           className="absolute top-3 right-3 text-xl bg-white shadow-md px-2 py-1 rounded-full"

@@ -7,7 +7,7 @@ const CartItem = ({ product }) => {
 
   return (
     <div className="flex gap-4 items-center mt-10 p-4 rounded-lg bg-white">
-      <img src={product.thumbnail} alt={product.title} className="w-24 h-24 bg-[#F9F1E7] object-contain rounded-lg"/>
+      <img src={product.thumbnail} loading="lazy" alt={product.title} className="w-24 h-24 bg-[#F9F1E7] object-contain rounded-lg"/>
       <div className="flex-1">
         <h3 className="font-semibold text-lg">{product.title}</h3>
         <p className="text-gray-500">${product.price} x {product.quantity}</p>
