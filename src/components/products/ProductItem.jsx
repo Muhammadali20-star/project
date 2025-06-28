@@ -58,10 +58,10 @@ const ProductItem = (product) => {
         <p className="text-xl font-bold text-gray-800">${price}</p>
 
         {cartItem ? (
-          <div className="flex items-center justify-between mt-7 bg-gray-100 py-1 px-2 rounded-lg">
-            <button onClick={handleDecrease} className="w-7 h-7 flex items-center justify-center rounded bg-white text-xl font-bold shadow">−</button>
+          <div className="flex items-center justify-between mt-7 bg-gray-100 py-1 px-2 rounded-4xl">
+            <button onClick={handleDecrease} className="w-7 h-7 flex items-center justify-center rounded text-xl font-bold">−</button>
               <span className="text-lg font-semibold">{cartItem.quantity}</span>
-              <button onClick={handleIncrease} className="w-7 h-7 flex items-center justify-center rounded bg-white text-xl font-bold shadow">+</button>
+              <button onClick={handleIncrease} className="w-7 h-7 flex items-center justify-center rounded text-xl font-bold">+</button>
           </div>
         ) : (
           <button onClick={handleAddToCart} className="w-full mt-4 bg-gradient-to-r from-black to-gray-800 text-white py-2 rounded-xl font-medium">Add to Cart</button>
