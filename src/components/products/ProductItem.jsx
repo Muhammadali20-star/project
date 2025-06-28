@@ -1,43 +1,71 @@
 import React from "react";
 import { HeartOutlined, HeartFilled } from "@ant-design/icons";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleWishlist } from "@/redux/features/wishlist";
-import { addToCart } from "@/redux/features/cart";
+import {
+  toggleWishlist
+} from "@/redux/features/wishlist";
+import {
+  addToCart,
+  incrementCart,
+  decrementCart,
+  removeCart,
+} from "@/redux/features/cart";
 import { useNavigate } from "react-router-dom";
 
 const ProductItem = (product) => {
-  const navigate = useNavigate()
-  const { title, brand, price, thumbnail } = product;
+  const navigate = useNavigate();
+  const { id, title, brand, price, thumbnail } = product;
   const dispatch = useDispatch();
   const wishlist = useSelector((state) => state.wishlist.value);
-  
+  const cart = useSelector((state) => state.cart.value);
+  const cartItem = cart.find((item) => item.id === id);
+
+  const handleAddToCart = () => {
+    dispatch(addToCart(product));
+  };
+
+  const handleIncrease = () => {
+    dispatch(incrementCart(product));
+  };
+
+  const handleDecrease = () => {
+    if (cartItem.quantity === 1) {
+      dispatch(removeCart(product));
+    } else {
+      dispatch(decrementCart(product));
+    }
+  };
 
   return (
-    <div className="bg-gray-100 group relative">
-      <div className="h-[285px] overflow-hidden relative">
-        <img
-        onClick={()=> navigate(`/products/${product.id}`)}
-          className="w-full h-full object-contain group-hover:scale-105 duration-300"
-          src={thumbnail}
-          alt={title}
-        />
+    <div className="rounded-2xl overflow-hidden bg-white">
+      <div className="relative group">
+        <img src={thumbnail} alt={title} onClick={() => navigate(`/products/${id}`)} className="w-full h-64 object-contain bg-gray-100 p-4"/>
         <button
           onClick={() => dispatch(toggleWishlist(product))}
-          className="absolute top-4 right-4 cursor-pointer bg-white size-7 grid place-items-center  rounded-full"
+          className="absolute top-3 right-3 text-xl bg-white shadow-md px-2 py-1 rounded-full"
         >
-          {wishlist.some((item) => item.id === product.id) ? (
+          {wishlist.some((item) => item.id === id) ? (
             <HeartFilled />
           ) : (
             <HeartOutlined />
           )}
         </button>
       </div>
-      <div className="p-4 leading-8">
-        <h3 className="font-bold">{title}</h3>
-        <p>{brand}</p>
-        <strong>{price} USD</strong>
-        <br />
-        <button className="border border-gray-300 rounded py-1 text-center px-3" onClick={()=> dispatch(addToCart(product))}>Add to cart</button>
+
+      <div className="p-5 space-y-2">
+        <h3 className="text-lg font-semibold text-gray-800 line-clamp-1">{title}</h3>
+        <p className="text-sm text-gray-500">{brand}</p>
+        <p className="text-xl font-bold text-gray-800">${price}</p>
+
+        {cartItem ? (
+          <div className="flex items-center justify-between mt-7 bg-gray-100 py-1 px-2 rounded-lg">
+            <button onClick={handleDecrease} className="w-7 h-7 flex items-center justify-center rounded bg-white text-xl font-bold shadow">−</button>
+              <span className="text-lg font-semibold">{cartItem.quantity}</span>
+              <button onClick={handleIncrease} className="w-7 h-7 flex items-center justify-center rounded bg-white text-xl font-bold shadow">+</button>
+          </div>
+        ) : (
+          <button onClick={handleAddToCart} className="w-full mt-4 bg-gradient-to-r from-black to-gray-800 text-white py-2 rounded-xl font-medium">Add to Cart</button>
+        )}
       </div>
     </div>
   );
