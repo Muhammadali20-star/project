@@ -1,0 +1,16 @@
+.custom-pagination .ant-pagination-item {
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid #d9d9d9;
+}
+.custom-pagination .ant-pagination-item-active {
+background-color: #B88E2F;
+border-color: #B88E2F;
+}
+
+.custom-pagination .ant-pagination-item-active a {
+color: white;
+}
+  
+
+  
