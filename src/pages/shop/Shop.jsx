@@ -1,7 +1,7 @@
 import { useProduct } from "@/api/hooks/useProduct";
 import Products from "@/components/products/Products";
 import { Pagination } from "antd";
-import React from "react";
+import React, { useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import HeroShop from "./hero-shop/HeroShop";
 import HeroInfo from "./hero-info/HeroInfo";
@@ -16,6 +16,10 @@ const Shop = () => {
   
 
   const { data, isLoading } = getProduct({ limit: pageSize, skip: pageSize * (page - 1) });
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [page]);
 
   const handleChangePage = (page, pageS) => {
     if(pageS !== pageSize){

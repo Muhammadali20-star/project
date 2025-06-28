@@ -64,7 +64,7 @@ const ProductItem = (product) => {
               <button onClick={handleIncrease} className="w-7 h-7 flex items-center justify-center rounded text-xl font-bold">+</button>
           </div>
         ) : (
-          <button onClick={handleAddToCart} className="w-full mt-4 bg-gradient-to-r from-black to-gray-800 text-white py-2 rounded-xl font-medium">Add to Cart</button>
+          <button onClick={handleAddToCart} className="w-full mt-4 bg-[#B88E2F] text-white py-2 rounded-xl font-medium">Add to Cart</button>
         )}
       </div>
     </div>
