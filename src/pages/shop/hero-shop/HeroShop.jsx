@@ -21,10 +21,6 @@ const HeroShop = () => {
     image = shopBg;
     title = 'Contact';
     subtitle = 'Home > Contact';
-  } else if (pathname === '/wishlist') {
-    image = shopBg;
-    title = 'Wishlist';
-    subtitle = 'Home > Wishlist';
   } else if (pathname === '/cart') {
     image = shopBg;
     title = 'Cart';
