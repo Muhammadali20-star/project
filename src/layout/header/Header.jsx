@@ -68,7 +68,7 @@ const Header = () => {
                   className="border px-3 py-1 rounded focus:outline-none w-[500px]"
                 />
                 {value && data?.data?.products?.length > 0 && (
-                  <div className="absolute top-full mt-2 w-[500px] max-h-[300px] overflow-auto bg-white border shadow z-50 rounded">
+                  <div className="absolute top-full mt-2 w-[500px] max-h-[300px] overflow-auto bg-white border border-gray-200 shadow z-50 rounded">
                     {data.data.products.map((product) => (
                       <div
                         key={product.id}
@@ -78,8 +78,8 @@ const Header = () => {
                         <img src={product.thumbnail} alt={product.title} width={50} />
                         <div>
                           <p className="font-semibold text-sm">{product.title}</p>
-                          <p className="text-xs text-gray-500 line-clamp-2">{product.description}</p>
                         </div>
+                        <p className="font-semibold text-sm">{product.price}$</p>
                       </div>
                     ))}
                   </div>
