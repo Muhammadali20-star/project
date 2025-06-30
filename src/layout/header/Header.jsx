@@ -20,7 +20,7 @@ const Header = () => {
   const [value, setValue] = useState('');
   const navigate = useNavigate();
 
-  const text = useDebounce();
+  const text = useDebounce(value, 500);
   const { data } = getSearchProduct({ q: text.trim() });
 
   const wishlist = useSelector((state) => state.wishlist.value);
